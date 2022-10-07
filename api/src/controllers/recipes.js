@@ -1,4 +1,4 @@
-const { Recipe, Diet } = require("../db");
+const { Recipe, Diet, Dish } = require("../db");
 const { APIKEY, SPOON_URL } = process.env;
 const axios = require('axios');
 
@@ -17,6 +17,7 @@ const getApiRecipes = async () => {
                 score: e.spoonacularScore,
                 healthScore: e.healthScore,
                 image: e.image,
+                dishTypes: e.dishTypes?.map(dish => dish),
                 diets: e.diets?.map(diet => diet),
                 steps: e.analyzedInstructions[0]?.steps.map(e => {
                     return {
@@ -39,13 +40,24 @@ const getApiRecipes = async () => {
 
 const getDbRecipes = async () => {
 return await Recipe.findAll({
-    include: {
-        model: Diet,
-        attributes: ['name'],
-        through: {
-            attributes:[],
+    include: [
+        {
+            model: Diet,
+            attributes: ['name'],
+            through: {
+                attributes:[],
+            }
+        },
+        {
+            model: Dish,
+            attributes: ['name'],
+            through: {
+                attributes:[],
+            }
         }
-    }
+    
+
+    ]
 });
 }
 
@@ -74,8 +86,13 @@ const recipeByIbDb = async(id) => {
             attributes: ['name'],
             through: {
                 attributes: [],
+            },
+            model: Dish,
+            attributes: ['name'],
+            through: {
+                attributes: [],
             }
-        }
+        }  
     })
     return recipe;
 }

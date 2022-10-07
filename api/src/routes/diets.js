@@ -1,20 +1,10 @@
 const {Router} = require('express');
 const { Diet } = require('../db');
+const {dietsTypes} = require('../controllers/dietsTypes.js')
 
 const router = Router();
 
 router.get('/', async (req,res)=>{
-    const dietsTypes = ['gluten free',
-    'ketogenic',
-    'vegetarian',
-    'lacto vegetarian',
-    'ovo vegetarian',
-    'vegan',
-    'pescatarian',
-    'paleo',
-    'primal',
-    'low foodmap',
-    'whole 30',]
     try{ 
         let diets = await Promise.all(dietsTypes.map(type => {
             return Diet.findOrCreate(

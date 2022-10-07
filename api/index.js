@@ -19,10 +19,16 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const { Diet } = require('./src/db');
+const { Dish } = require('./src/db');
+const {dietsTypes} = require('../api/src/controllers/dietsTypes.js');
+const {dishes} = require('../api/src/controllers/dishes.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
+    dietsTypes.forEach(async (diet) => await Diet.create({name: diet}));
+    dishes.forEach(async (dish) => await Dish.create({name: dish}));
   });
 });
