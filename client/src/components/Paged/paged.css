@@ -1,0 +1,82 @@
+@font-face {font-family: "Centra No2"; src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot"); 
+src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.svg#Centra No2") format("svg"); }
+    
+.paged{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.numbers-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; 
+}
+
+.number{
+    border-radius: 20px;
+    height: 35px;
+    width: 35px;
+    border: none;
+    background-color: rgb(7, 11, 233);
+    color: white;
+    cursor: pointer;
+    font-family: "Centra No2", sans-serif;
+    font-size: 16px;
+}
+
+.number-active{
+    border-radius: 20px;
+    height: 35px;
+    width: 35px;
+    border: none;
+    background-color: rgb(251, 234, 36);
+    cursor: pointer;
+    color: rgb(229, 35, 40);
+    font-family: "Centra No2", sans-serif;
+    font-size: 16px;
+}
+
+.btn {
+    fill: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+.btn-slide{
+    height: 35px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: rgb(7, 11, 233);
+    color: white;
+    cursor: pointer;
+    font-family: "Centra No2", sans-serif;
+    font-size: 16px;
+}
+
+.btn-slide:hover, .number:hover {
+    background-color: rgb(251, 234, 36);
+    transition: 0.3s;
+  }
+  
+
+.btn-slide:disabled{
+    background-color: rgb(123, 125, 214);
+}
+
+.next{
+    padding-left: 15px;
+    border-radius: 0 10px 10px 0;
+}
+
+
+
+.prev{
+    padding-right: 15px;
+    border-radius: 10px 0 0 10px;
+}

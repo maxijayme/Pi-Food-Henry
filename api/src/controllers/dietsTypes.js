@@ -1,11 +1,10 @@
 const dietsTypes = ['gluten free',
 'ketogenic',
 'vegetarian',
-'lacto vegetarian',
-'ovo vegetarian',
+'lacto ovo vegetarian',
 'vegan',
 'pescatarian',
-'paleo',
+'paleolithic',
 'primal',
 'low foodmap',
 'whole 30']

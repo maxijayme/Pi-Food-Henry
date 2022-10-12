@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
     healthScore:{
       type: DataTypes.INTEGER,
     },
-    analyzedInstructions: {
+    steps: {
       type: DataTypes.TEXT
     },
     image: {
@@ -33,6 +33,18 @@ module.exports = (sequelize) => {
       allowNull:false,
       defaultValue: true
     },
+    readyInMinutes: {
+      type: DataTypes.INTEGER,
+    },
+    servings:{
+      type: DataTypes.INTEGER,
+    },
+    weightWatcherSmartPoints:{
+      type: DataTypes.INTEGER,
+    },
+    dishTypes:{
+      type: DataTypes.TEXT
+    }
   },
   {
     timestamps: false

@@ -1,6 +1,6 @@
 const {Router} = require('express');
-const {Recipe, Diet , Dish} = require('../db.js')
-const {getAllRecipes, recipeByIbApi, recipeByIbDb} = require('../controllers/recipes.js');
+const {Recipe, Diet} = require('../db.js')
+const {getAllRecipes, recipeByIdApi, recipeByIbDb} = require('../controllers/recipes.js');
 
 const router = Router();
 
@@ -15,11 +15,10 @@ router.get('/:id', async(req,res,next)=>{
         const regex = /^[0-9]*$/;
         if(!regex.test(id)){  
             recipe = await recipeByIbDb(id)
-            console.log(recipe)
             if(recipe) res.status(200).json(recipe);
             else res.status(400).send('Recipe not found');
         }else{
-            recipeResponse = recipeByIbApi(id);
+            recipeResponse = await recipeByIdApi(id);
             if(recipeResponse.data){
                 recipe = {
                     name: recipeResponse.data.title,
@@ -29,6 +28,9 @@ router.get('/:id', async(req,res,next)=>{
                     image: recipeResponse.data.image,
                     diets: recipeResponse.data.diets?.map(diet => diet),
                     dishTypes: recipeResponse.data.dishTypes?.map(dish => dish),
+                    servings: recipeResponse.data.servings,
+                    readyInMinutes: recipeResponse.data.readyInMinutes,
+                    weightWatcherSmartPoints: recipeResponse.data.weightWatcherSmartPoints,
                     steps: recipeResponse.data.analyzedInstructions[0]?.steps.map(e => {
                         return {
                             number: e.number,
@@ -97,9 +99,13 @@ router.post('/', async(req,res,next) =>{
         score,
         healthScore,
         image,
+        diets,
+        createdInDb,
         steps,
-        dietname,
-        dishTypes} = req.body;
+        servings,
+        readyInMinutes,
+        weightWatcherSmartPoints,
+        } = req.body;
     if (!name) return res.status(400).send({error:'You must enter the name for the recipe'});
     if (!summary) return res.status(400).send({error:'You must enter the summary for the recipe'});
     else{
@@ -110,22 +116,18 @@ router.post('/', async(req,res,next) =>{
                 score,
                 healthScore,
                 image,
+                createdInDb,
                 steps,
+                servings,
+                readyInMinutes,
+                weightWatcherSmartPoints,
                 }
                 );
-            if(dishTypes) { 
-                const dishes = await Dish.findAll({ 
-                    where: {name: dishTypes}
+            if(diets) { 
+                const findDiet = await Diet.findAll({ 
+                    where: {name: diets}
                 })
-                var dish = dishes.map(e => e.dataValues.name)
-                await recipe.addDish(dish)
-            }
-            if(dietname) { 
-                const diets = await Diet.findAll({ 
-                    where: {name: dietname}
-                })
-                var dieta = diets.map(e => e.dataValues.name)
-                await recipe.addDiet(dieta)
+                await recipe.addDiet(findDiet)
             }
             res.status(201).send(recipe);
         }

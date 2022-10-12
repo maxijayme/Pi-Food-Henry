@@ -1,0 +1,148 @@
+@font-face {font-family: "Centra No2"; src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot"); 
+src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.svg#Centra No2") format("svg"); }
+@font-face {font-family: "Centra No2 Light"; 
+src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff") format("woff"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.svg#Centra No2 Light") format("svg"); }
+
+
+.recipe {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 380px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(167, 167, 167);
+    padding-left: 6px;
+    padding-right: 6px;
+    position: relative;
+    background-color: rgb(248, 248, 242);
+    -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+    box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+}
+
+.recipe:hover{
+    transform: rotateY(-20deg) rotateX(20deg) scale(1.1);
+  transition: all 0.3s
+}
+
+.head-card{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipeHealthScore{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(229, 35, 40);
+    border-radius: 20px;
+    margin-top: -20px;
+    color: rgb(251, 234, 36);
+}
+
+.recipeHealthScore h5{
+    position: absolute;
+}
+
+.hs-text{
+    position: absolute;
+    font-family: "Centra No2 Light", sans-serif;
+    font-size: 6pt;
+    margin-top: 60px;
+    width: 30px;
+    text-align: center;
+    color: rgb(229, 35, 40);
+}
+
+.name-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+}
+
+.recipeName {
+    margin-left: -10px;
+    font-family: Centra No2, sans-serif ; 
+    line-height:20px;
+    width: 220px;
+    color: rgb(29, 27, 27);
+}
+
+
+.image-diet{
+    margin-top: -18px;
+}
+
+.recipeImg-container{
+    display: flex;
+    justify-content: center;
+    width: 280px; 
+    height: 180px;
+    overflow: hidden
+}
+
+.recipeImg {    
+    background-color: #ce5249;
+    width: 100%;
+    
+}
+
+
+.dietCointainer {
+    position: absolute;
+    margin-top:-170px;
+    margin-left: 10px;
+    color: #ffffff;
+}
+
+
+.items-container{
+    display: grid;
+    grid-template-rows: repeat(3,30px);
+    width: 280px; 
+    height: 100px;
+    justify-items: center;
+    align-items: center;
+    margin-top: -15px;
+    color: rgb(50, 50, 50);;
+}
+
+
+.time,.servings, .wwsp{
+    display: flex;
+    align-items: center;
+}
+
+
+.line-time{
+    border-bottom: 1px solid black;
+    width: 150px;
+    height: 10px;
+    margin: 0 8px 0 8px;
+}
+
+.line-servings{
+    border-bottom: 1px solid black;
+    width: 185px;
+    height: 10px;
+    margin: 0 8px 0 8px;
+}
+
+.line-wwsp{
+    border-bottom: 1px solid black;
+    width: 85px;
+    height: 10px;
+    margin: 0 8px 0 8px;
+}

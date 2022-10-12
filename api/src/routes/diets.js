@@ -4,18 +4,19 @@ const {dietsTypes} = require('../controllers/dietsTypes.js')
 
 const router = Router();
 
-router.get('/', async (req,res)=>{
-    try{ 
-        let diets = await Promise.all(dietsTypes.map(type => {
-            return Diet.findOrCreate(
-                {
-                  where: {name: type}
-                })
-            }))
-        res.status(200).json(diets.flat());
-    } catch (error){
-        res.status(400).send(error);
+router.get('/', async (req, res, next) => {
+    
+    try {
+       dietsTypes.forEach(type => {
+            Diet.findOrCreate({
+                where: { name: type}
+            })
+        });
+        res.send(dietsTypes)
+    } catch (error) {
+        next(error)
     }
 })
+
 
 module.exports = router;

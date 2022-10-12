@@ -1,0 +1,104 @@
+@font-face {font-family: "Centra No2"; src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot"); 
+src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.svg#Centra No2") format("svg"); }
+@font-face {font-family: "Centra No2 Light"; 
+src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff") format("woff"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.svg#Centra No2 Light") format("svg"); }
+@font-face {font-family: "Centra No2 Thin"; 
+src: url("//db.onlinewebfonts.com/t/67bac7131607122728c4b0b04138d514.eot"); src: url("//db.onlinewebfonts.com/t/67bac7131607122728c4b0b04138d514.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/67bac7131607122728c4b0b04138d514.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/67bac7131607122728c4b0b04138d514.woff") format("woff"), url("//db.onlinewebfonts.com/t/67bac7131607122728c4b0b04138d514.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/67bac7131607122728c4b0b04138d514.svg#Centra No2 Thin") format("svg"); }
+
+.searchbar{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: rgb(73, 75, 232);
+    height: 40px;
+    position: fixed;
+    margin-top: 50px;
+    z-index: 2;
+}
+
+.form-container{
+    padding-top: 5px;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    float: right;
+    height: 30px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+.reset-search-btn{
+    height: 100%;
+    width: 30px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0 );
+    border: none;
+    margin-top: 2px;
+}
+
+.input{
+    height: 70%;
+    border: none;
+    font-family: "Centra No2 Light",sans-serif;
+    width: 80%;
+}
+
+.input:focus{
+    outline: none
+}
+
+.search-btn{
+    height: 90%;
+    background-color: rgba(0, 0, 0, 0 );
+    align-items: center;
+    border: none;
+    margin-right: 5px;
+}
+
+
+.filters{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    margin: 5px;
+}
+
+.select {
+   height: 100%;
+   border-radius: 10px;
+   font-family: "Centra No2 light", sans-serif;
+   outline: none
+}
+
+.select:focus{
+    font-family: 'Centra No2', sans-serif
+}
+
+
+
+.refreshButton {
+    float: left;
+    color: rgb(229, 35, 40);
+    background-color: rgb(251, 234, 36);
+    font-size: 17px;
+    text-align: center;
+    height: 30px;
+    margin: 5px;
+    margin-left: 40px;
+    border-radius: 10px;
+    cursor:pointer;
+    border: none;
+    font-family: 'Centra No2', sans-serif;
+    transition: all 0.5s ease-in-out;
+}
+
+.refreshButton:hover {
+    transition: all 0.5s ease-in-out;
+    color: #fff112;
+    background-color: #eb3136;
+}

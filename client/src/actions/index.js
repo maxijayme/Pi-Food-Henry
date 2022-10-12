@@ -1,28 +1,19 @@
-//declaro las variables con las action types
-
-export const GET_RECIPES = 'GET_RECIPES';
-export const GET_RECIPE_NAME = 'GET_RECIPE_NAME'
-export const GET_RECIPE_ID = 'GET_RECIPE_ID';
-export const CREATE_RECIPE = 'CREATE_RECIPE';
-export const FILTER_BY_TYPE = 'FILTER_BY_TYPE';
-export const FILTER_BY_SOURCE = 'FILTER_BY_SOURCE;';
-export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+import axios from 'axios';
+import {GET_RECIPES, GET_DIETS, FILTER_BY_DIET, FILTER_BY_SOURCE, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_NAME, GET_RECIPE_ID, CREATE_RECIPE} from './actionTypes.js'
+//  GET_DISHES
 
 const LOCAL_HOST = "http://localhost:3001";
 
 
-//Obtener todas las recipes
-export const getRecipes = () => dispatch =>{
-    return fetch(`${LOCAL_HOST}/recipes`)
-        .then(response => response.json())
-        .then(recipes => dispatch({
+export function getRecipes(){
+    return async function(dispatch){
+        let recipes = await axios.get(`${LOCAL_HOST}/recipes`);
+        return dispatch({
             type: GET_RECIPES,
-            payload: recipes
-        }))
-        .catch((error) => {
-            console.log(error)
+            payload: recipes.data
         })
-};
+    }
+}
 
 //obtener las recipes por nombre
 export const getRecipesByName = (name) => dispatch =>{
@@ -39,30 +30,93 @@ export const getRecipesByName = (name) => dispatch =>{
 
 
 //obtener recipe por ID
-export function getRecipeByID(id){
-    return function(dispatch){
-        return fetch(`${LOCAL_HOST}/recipes/${id}`)
-        .then(response => response.json())
-            .then(recipe => dispatch({
-                type: GET_RECIPE_ID,
-                payload: recipe
-            }))
-            .catch((error) => {
-                console.log(error)
-        })
+export function getRecipeByID(id) {
+    return async function(dispatch) {
+        try {
+            var response = await axios.get(`${LOCAL_HOST}/recipes/${id}`);
+            return dispatch({
+                type: GET_RECIPE_ID, payload: response.data
+            })
+        } catch (error) {
+            console.log(error)
+        }
     }
 };
 
-//filtro por tipo de dieta
+// export function getRecipeByID(id){
+//     return async function(dispatch){
+//         return await fetch(`${LOCAL_HOST}/recipes/${id}`)
+//         .then(response => response.json())
+//             .then(recipe => dispatch({
+//                 type: GET_RECIPE_ID,
+//                 payload: recipe
+//             }))
+//             .catch((error) => {
+//                 console.log(error)
+//         })
+//     }
+// };
+
+// //obtener dietas
+
+export function getDiets(){
+    return function (dispatch){
+        try{
+            axios.get(`${LOCAL_HOST}/diets`)
+            .then(diets => 
+                dispatch({
+               type: GET_DIETS,
+               payload: diets.data
+               })
+           )
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+}
+
+// //obtener platos
+
+// export function getDishes(dispatch){
+//     return fetch(`${LOCAL_HOST}/dishes`)
+//         .then(response => response.json())
+//         .then(dishes => dispatch({
+//             type: GET_DISHES,
+//             payload: dishes
+//         }))
+//         .catch((error) => {
+//             console.log(error)
+//         })
+// }
+
+
+
+//crear receta
+
+export function postRecipe(data) {
+    return async (dispatch) => {
+      try {
+        const response = await axios.post(`${LOCAL_HOST}/recipes`, data);
+        dispatch({ type: CREATE_RECIPE, payload: response.data });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }
+
+
+
+// //filtro por tipo de dieta
 
 export function filterByDietType(payload){
     return{
-        type: FILTER_BY_TYPE,
+        type: FILTER_BY_DIET,
         payload
     }
 }
 
-//filtro por tipo origen
+// //filtro por tipo origen
 
 export function filterBySource(payload){
     return{
@@ -76,6 +130,15 @@ export function filterBySource(payload){
 export function orderByName(payload){
     return{
         type: ORDER_BY_NAME,
+        payload
+    }
+}
+
+//orden por score
+
+export function orderByScore(payload){
+    return{
+        type: ORDER_BY_SCORE,
         payload
     }
 }
