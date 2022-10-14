@@ -80,20 +80,24 @@ export default function SearchBar({setCurrentPage, setOrder}){
             </div>
             <div className='filters'>
                 <select className="select" name="byName" onChange={e => {handleOrderByName(e)}}>
+                  
                      <option value="Desc">A to Z</option>
                      <option value="Asc">Z to A</option>
                 </select>
                  <select className="select" name="byScore" onChange={e => {handleOrderByScore(e)}}>
+              
                      <option value="Hig">Higher to Lower</option>
                      <option value="Low">Lower to Higher</option>
                  </select>
                  <select className="select" name="dietFilter" onChange={e => {handleFilteredByDietType(e)}}>
+               
                      <option value="All">All</option>
                      {diets.map(e=>{                  
                         return <option value={`${e}`} key={`${e}`}>{e}</option>
                      })}
                 </select>
                 <select className="select" name="Source" onChange={e => {handleFilteredBySource(e)}}>
+               
                     <option value="All">All</option>
                     <option value="Api">Api</option>
                     <option value="Db">Data Base</option>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {GET_RECIPES, GET_DIETS, FILTER_BY_DIET, FILTER_BY_SOURCE, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_NAME, GET_RECIPE_ID, CREATE_RECIPE} from './actionTypes.js'
-//  GET_DISHES
+
 
 const LOCAL_HOST = "http://localhost:3001";
 
@@ -43,21 +43,8 @@ export function getRecipeByID(id) {
     }
 };
 
-// export function getRecipeByID(id){
-//     return async function(dispatch){
-//         return await fetch(`${LOCAL_HOST}/recipes/${id}`)
-//         .then(response => response.json())
-//             .then(recipe => dispatch({
-//                 type: GET_RECIPE_ID,
-//                 payload: recipe
-//             }))
-//             .catch((error) => {
-//                 console.log(error)
-//         })
-//     }
-// };
 
-// //obtener dietas
+//obtener dietas
 
 export function getDiets(){
     return function (dispatch){
@@ -76,19 +63,6 @@ export function getDiets(){
     }
 }
 
-// //obtener platos
-
-// export function getDishes(dispatch){
-//     return fetch(`${LOCAL_HOST}/dishes`)
-//         .then(response => response.json())
-//         .then(dishes => dispatch({
-//             type: GET_DISHES,
-//             payload: dishes
-//         }))
-//         .catch((error) => {
-//             console.log(error)
-//         })
-// }
 
 
 

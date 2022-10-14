@@ -1,12 +1,11 @@
 import {GET_RECIPES, GET_DIETS, FILTER_BY_DIET, FILTER_BY_SOURCE, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_NAME, GET_RECIPE_ID, CREATE_RECIPE} from '../actions/actionTypes.js'
 
-//  GET_DISHES
+
 const initialState = {
     recipes : [],
     recipesOriginal: [],
     recipeDetails : {},
     diets:[],
-    // dishes:[]
 }
 
 function rootReducer( state = initialState, action ){
@@ -84,11 +83,6 @@ function rootReducer( state = initialState, action ){
               recipes: recipeSortedScore
             }
         }
-        // case GET_DISHES:
-        //   return {
-        //     ...state,
-        //     dishes: action.payload
-        //   }
         default:
             return {
                 ...state

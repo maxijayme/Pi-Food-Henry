@@ -1,8 +1,207 @@
-p.danger {
-    color: red;
-    font-size: 10px;
-  }
+@font-face {font-family: "Centra No2"; src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot"); 
+src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.svg#Centra No2") format("svg"); }
+@font-face {font-family: "Centra No2 Light"; 
+src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff") format("woff"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.svg#Centra No2 Light") format("svg"); }
   
-  input.danger {
-    border: 2px solid red;
-  }
+  
+
+.create{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  background-image: url('../../img/Artboard\ 1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.create-body{
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px 30px 30px;
+  width: 400px;
+  height: 640px;
+  border-radius: 30px;
+  border: 1px solid rgb(167, 167, 167);
+  background-color: rgb(248, 248, 242);
+  -webkit-box-shadow: 10px 10px 47px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 47px -6px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 47px -6px rgba(0,0,0,0.75);
+}
+
+.tittle-create{
+  color:rgb(229, 35, 40);
+}
+
+.name-form, .summary-form{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.score-form {
+  display: flex;
+  justify-content: space-between;
+ height: 80px;
+}
+
+.minutes-form, .servings-form, .wwsp-form,.steps-form{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.diets-form{
+  display: flex;
+  gap: 50px;
+  margin-bottom: 10px;
+}
+
+.img-form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-option, .div-delete{
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  flex-wrap: wrap;
+}
+
+.btn-delete{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(229, 35, 40);
+  color: #fff;
+  width: 10px;
+  height: 12px;
+  font-size: 5pt;
+  text-align: center;
+  border-radius: 7px;
+  margin: 0;
+  border: none;
+}
+
+.text-delete{
+  font-size: 9pt;
+  margin: 0;
+  height: 20px;
+}
+
+.name-label, .summary-label, .img-label, .score-label, .score-number, .minutes-label, .servings-label, .wwsp-label, .diets-label, .steps-label {
+  font-family: Centra No2;
+}
+
+.name-input, .summary-input, .img-input {
+  border: none;
+  border-bottom: 2px solid #362F8B;
+  width: 280px;
+  font-family: Centra No2 Light;
+  font-size: 12pt;
+  background-color: rgb(248, 248, 242);
+}
+
+.name-input, .summary-input, .img-input,.servings-input, .minutes-input, .wwsp-input, :focus{
+  outline: none
+}
+
+.score-form{
+  align-items: center;
+}
+
+
+.score-input {
+	background: #fff;
+	height: 2rem;
+	width: 55%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  background-color: rgb(248, 248, 242);
+}
+
+
+.score-number{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(229, 35, 40);
+  background-color: rgb(251, 234, 36);
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  font-weight: 900;
+  font-size: 20pt;
+}
+
+
+.servings-input, .minutes-input, .wwsp-input{
+  font-family: Centra No2 Light;
+  font-size: 12pt;
+  text-align: center;
+  border: #fff;
+  width: 60px;
+  background-color: rgb(248, 248, 242);
+}
+
+.diets-input{
+  border-radius: 20px;
+  font-family: Centra No2 Light;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.steps-input{
+  border-radius: 10px;
+  width: 90%;
+  height: 100px;
+  font-family: Centra No2 Light;
+  font-size: 12pt;
+}
+
+.button-submit{
+  border-radius: 10px;
+  color: rgb(251, 234, 36);
+  background-color: rgb(229, 35, 40);
+  font-size: 17px;
+  text-align: center;
+  height: 30px;
+  cursor:pointer;
+  border: none;
+  font-family: 'Centra No2', sans-serif;
+  transition: all 0.5s ease-in-out;
+}
+.btnDisabled{
+  border-radius: 10px;
+  color: rgb(241, 240, 223);
+  background-color: rgb(224, 122, 125);
+  font-size: 17px;
+  text-align: center;
+  height: 30px;
+  border: none;
+  font-family: 'Centra No2', sans-serif;
+  transition: all 0.5s ease-in-out;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.form-cont{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-complete{
+  height: 540px;
+}
+
+.btns{
+  display: flex;
+  margin-bottom: -100px;
+  justify-content: center;
+}

@@ -15,7 +15,7 @@ export default function Home(){
     
     
     const [ currentPage, setCurrentPage ] = useState(1);
-    const [recipesPerPage, ] = useState(4);
+    const [recipesPerPage, ] = useState(9);
     
     const indexOfLastRecipe= currentPage * recipesPerPage
     const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage
@@ -69,7 +69,7 @@ export default function Home(){
                             )
                         })
                     }
-                </div>
+                </div>                
             </div>
         </div>
     )

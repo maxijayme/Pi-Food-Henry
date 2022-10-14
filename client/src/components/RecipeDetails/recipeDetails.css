@@ -1,0 +1,356 @@
+@font-face {font-family: "Centra No2"; src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot"); 
+src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.svg#Centra No2") format("svg"); }
+@font-face {font-family: "Centra No2 Light"; 
+src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.woff") format("woff"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.svg#Centra No2 Light") format("svg"); }
+
+
+.details-d{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 1vh;
+    margin-top: 50px;
+    position: absolute;
+    width: 100%;
+}
+
+.card-cont-d{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-self: center;
+    justify-items:start;
+}    
+
+
+.card-d{
+    margin-top: -100px;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(3,1fr);
+    border-radius: 10px;
+    border: 1px solid rgb(167, 167, 167);
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgb(248, 248, 242);
+    width: 400px;
+    height: 510px;
+    -webkit-box-shadow: 9px 22px 61px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 22px 61px -8px rgba(0,0,0,0.75);
+    box-shadow: 9px 22px 61px -8px rgba(0,0,0,0.75);
+    transition: all .5s ease-out;
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+
+
+.head-card-d{
+    position: relative;
+    width: 100%;
+    height: 90px;
+    margin-top: 25px;
+}
+
+.recipeHealthScore-d{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(229, 35, 40);
+    border-radius: 30px;
+}
+
+.recipeHealthScore-d h2{
+    color: rgb(251, 234, 36);
+    position: absolute;
+    margin-top: 15px;
+    font-size: 16pt;
+}
+
+.hs-text-d{
+    position: absolute;
+    font-family: "Centra No2 Light", sans-serif;
+    font-size: 10pt;
+    margin-top: 100px;
+    width: 40px;
+    text-align: center;
+    color: rgb(229, 35, 40);
+}
+
+.name-container-d{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+    margin-right: -40px;
+    margin-top: -15px;
+}
+
+.recipeName-d {
+    font-family: Centra No2, sans-serif ; 
+    font-size: 20pt;
+    line-height:20px;
+    width: 220px;
+    color: rgb(29, 27, 27);
+}
+
+
+.image-diet-d{
+    margin-top: -40px;
+
+}
+
+.recipeImg-container-d{
+    display: flex;
+    justify-content: center;
+    width: 370px; 
+    height: 220px;
+    overflow: hidden;
+}
+
+.recipeImg-d {    
+    background-color: #ce5249;
+    width: 100%;
+    
+}
+
+.items-details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.items-container-d{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 370px; 
+    height: 110px;
+    color: rgb(50, 50, 50);
+    font-size: 16pt;
+    margin-top: 20px;
+}
+
+
+.time-d,.servings-d, .wwsp-d{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    height: 20px;
+}
+
+
+.line-time-d{
+    border-bottom: 1px solid black;
+    width: 190px;
+    height: 10px;
+    margin: 0 8px 0 8px;
+}
+
+.line-servings-d{
+    border-bottom: 1px solid black;
+    width: 230px;
+    height: 10px;
+    margin: 0 8px 0 8px;
+}
+
+.line-wwsp-d{
+    border-bottom: 1px solid black;
+    width: 110px;
+    height: 10px;
+    margin: 0 8px 0 8px;
+}
+
+.backButton-d{
+    margin-top: 40px;
+    color: rgb(229, 35, 40);
+    background-color: rgb(251, 234, 36);
+    font-size: 17px;
+    text-align: center;
+    height: 30px;
+    border-radius: 10px;
+    cursor:pointer;
+    border: none;
+    font-family: 'Centra No2', sans-serif;
+    transition: all 0.5s ease-in-out;
+}
+
+.backButton-d:hover{
+    transition: all 0.5s ease-in-out;
+    color: #fff112;
+    background-color: #eb3136;
+}
+
+.rest-details-d{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+}
+
+.summary-container-d{
+    display: grid;
+    grid-template-columns: auto 14fr;
+    background-color: #e0e0e0;
+    padding-right: 40px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.texts-summary-d{
+    align-self: center;
+    text-align: left;
+    width: 100%;
+    font-size: 40pt;
+    font-weight: 900;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    width: 50px;
+}
+
+.summary-d{
+    font-family: 'Centra No2 Light', sans-serif;
+    padding-left: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+
+.steps-container-d{
+    background-color: #362F8B;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-items: end;
+    display: flex;
+    flex-direction: row;
+}
+
+.texts-steps-d{
+    font-size: 40pt;
+    font-weight: 900;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    width: 50px;
+    margin-top: 20px;
+    margin-right: -30px;
+    color: #58CF16;
+}
+
+.steps-d{
+    text-align: left;
+    padding-left: 40px;
+    width: 80%;
+    color: #ffff;
+}
+
+.diets-container-d{
+    background-color: #eb3136;
+    display: flex;
+    padding-left: 40px;
+    height: 90px;
+    align-items: center;
+
+}
+
+.texts-diets-d{
+    font-size: 14pt;
+    height: 30px;
+}
+
+.diets-list-container{
+    margin-left: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+}
+
+.diets-d{
+    color: #ffff;
+    font-size: 10pt;
+}
+
+.dishes-container-d{
+    background-color: #58CF16;
+    display: flex;
+    padding-left: 40px;
+    height: 60px; ;
+    align-items: center;
+}
+
+.texts-dish-d{
+    font-size: 14pt;
+    height: 30px;
+}
+
+.dish-list-container{
+    margin-left: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dishes-d{
+    color:#362F8B;
+    font-size: 10pt;
+}
+
+@-moz-keyframes animate {
+    0% {
+      margin-top: 20vh;
+    }
+    50% {
+      margin-top: 18vh;
+    }
+    100% {
+      margin-top: 20vh;
+    }
+  }
+  @-webkit-keyframes animate {
+    0% {
+      margin-top: 20vh;
+    }
+    50% {
+      margin-top: 18vh;
+    }
+    100% {
+      margin-top: 20vh;
+    }
+  }
+  @-o-keyframes animate {
+    0% {
+      margin-top: 20vh;
+    }
+    50% {
+      margin-top: 18vh;
+    }
+    100% {
+      margin-top: 20vh;
+    }
+  }
+  @keyframes animate {
+    0% {
+      margin-top: 20vh;
+    }
+    50% {
+      margin-top: 18vh;
+    }
+    100% {
+      margin-top: 20vh;
+    }
+  }

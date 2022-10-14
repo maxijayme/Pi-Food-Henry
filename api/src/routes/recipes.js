@@ -105,6 +105,7 @@ router.post('/', async(req,res,next) =>{
         servings,
         readyInMinutes,
         weightWatcherSmartPoints,
+        dishTypes
         } = req.body;
     if (!name) return res.status(400).send({error:'You must enter the name for the recipe'});
     if (!summary) return res.status(400).send({error:'You must enter the summary for the recipe'});
@@ -121,6 +122,7 @@ router.post('/', async(req,res,next) =>{
                 servings,
                 readyInMinutes,
                 weightWatcherSmartPoints,
+                dishTypes
                 }
                 );
             if(diets) { 

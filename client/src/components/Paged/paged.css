@@ -21,11 +21,18 @@ src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix"
     height: 35px;
     width: 35px;
     border: none;
-    background-color: rgb(7, 11, 233);
-    color: white;
+    color: rgb(229, 35, 40);
+    background-color: rgb(251, 234, 36);
     cursor: pointer;
     font-family: "Centra No2", sans-serif;
     font-size: 16px;
+    transition: all 0.5s ease-in-out;
+}
+
+.number:hover{
+    transition: all 0.5s ease-in-out;
+    color: rgb(251, 234, 36);
+    background-color: rgb(229, 35, 40);
 }
 
 .number-active{
@@ -33,12 +40,14 @@ src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix"
     height: 35px;
     width: 35px;
     border: none;
-    background-color: rgb(251, 234, 36);
+    background-color: rgb(229, 35, 40);
     cursor: pointer;
-    color: rgb(229, 35, 40);
+    color: rgb(251, 234, 36);
     font-family: "Centra No2", sans-serif;
     font-size: 16px;
 }
+
+
 
 .btn {
     fill: #fff;
@@ -52,21 +61,23 @@ src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix"
     display: flex;
     align-items: center;
     border: none;
-    background-color: rgb(7, 11, 233);
-    color: white;
+    background-color: rgb(251, 234, 36);
+    color: rgb(229, 35, 40);
     cursor: pointer;
     font-family: "Centra No2", sans-serif;
     font-size: 16px;
+ 
 }
 
-.btn-slide:hover, .number:hover {
-    background-color: rgb(251, 234, 36);
+.btn-slide:hover {
+    background-color: rgb(229, 35, 40);
+    color:rgb(251, 234, 36);
     transition: 0.3s;
   }
   
 
 .btn-slide:disabled{
-    background-color: rgb(123, 125, 214);
+    visibility: hidden;
 }
 
 .next{

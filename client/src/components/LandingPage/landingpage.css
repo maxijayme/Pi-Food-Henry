@@ -1,0 +1,32 @@
+.container{
+    background-image: url('../../img/Artboard\ 1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;   
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-btn{
+    color: rgb(229, 35, 40);
+    background-color: rgb(251, 234, 36);
+    border: none;
+    font-family: 'Centra No2', sans-serif;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    cursor:pointer;
+    height: 100px;
+    width: 210px;
+    font-size: 20pt;
+    -webkit-box-shadow: 10px 10px 47px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 47px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 47px -6px rgba(0,0,0,0.75);
+}
+
+.landing-btn:hover{
+    transition: all 0.5s ease-in-out;
+    color: #fff112;
+    background-color: #eb3136;
+}

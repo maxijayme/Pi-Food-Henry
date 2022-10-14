@@ -7,4 +7,3 @@ export const ORDER_BY_SCORE = 'ORDER_BY_SCORE';
 export const GET_RECIPE_NAME = 'GET_RECIPE_NAME';
 export const GET_RECIPE_ID = 'GET_RECIPE_ID';
 export const CREATE_RECIPE = 'CREATE_RECIPE';
-// export const GET_DISHES = 'GET_DISHES';

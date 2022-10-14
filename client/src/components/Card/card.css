@@ -22,10 +22,10 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
     box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
 }
 
-.recipe:hover{
-    transform: rotateY(-20deg) rotateX(20deg) scale(1.1);
-  transition: all 0.3s
-}
+.recipe:hover .recipeImg{
+    transform: scale(1.25) rotate(2deg);
+    transition: all ease-in-out .4s;
+  }
 
 .head-card{
     position: relative;
@@ -69,7 +69,8 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
     align-items: center;
     justify-content: center;
     width: 250px;
-    height: 50px;
+    height: 55px;
+    overflow: hidden;
 }
 
 .recipeName {
@@ -96,7 +97,7 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
 .recipeImg {    
     background-color: #ce5249;
     width: 100%;
-    
+    transition: all ease-in-out .4s;
 }
 
 
@@ -104,9 +105,22 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
     position: absolute;
     margin-top:-170px;
     margin-left: 10px;
-    color: #ffffff;
+    height: 160px;
+    width: 260px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
 }
 
+.diets{
+    border-radius: 10px;
+    color: rgb(229, 35, 40);
+    font-family: Centra No2 Light, sans-serif;
+    font-size: 9pt;
+    height: 15px;
+    width: 120px;
+    background-color: #ffffff;
+}
 
 .items-container{
     display: grid;
@@ -122,7 +136,10 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
 
 .time,.servings, .wwsp{
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content:space-between;
+    width: 100%;
 }
 
 
