@@ -10,12 +10,19 @@ export default function  CreateRecipe(){
 
     const dispatch = useDispatch();
     const diets = useSelector((state)=>state.diets)
+    const response = useSelector((state)=>state.error)
     const history = useHistory()
     const [errors, setErrors] = useState({});
     
+
+
     useEffect(()=>{
         dispatch(getDiets()) 
     },[dispatch])
+   
+    useEffect(()=>{
+        console.log(response)
+    },[response])
     
     const[input, setInput] = useState({
         name:"",
@@ -30,11 +37,9 @@ export default function  CreateRecipe(){
     })
 
 
-    function handleSubmit(e) {
+    function  handleSubmit(e) {
         e.preventDefault();
         dispatch(postRecipe(input))
-        console.log(input)
-        alert('Recipe was created')
         setInput({
             name:"",
             summary:"",
@@ -46,7 +51,8 @@ export default function  CreateRecipe(){
             servings:"0",
             weightWatcherSmartPoints:"0"
         })
-        history.push('/home')
+        
+        // history.push('/home')
     }
 
     const handleSelect = (e) => {

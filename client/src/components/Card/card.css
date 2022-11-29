@@ -13,13 +13,13 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
     height: 380px;
     margin-top: 15px;
     border-radius: 10px;
-    border: 1px solid rgb(167, 167, 167);
     padding-left: 6px;
     padding-right: 6px;
     position: relative;
     background-color: rgb(248, 248, 242);
     -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
-    box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+    box-shadow:  inset -3px -2px 7px rgb(0 0 0 / 6%),
+    15px 15px 27px #e1e1e3/*  -15px -15px 27px #ffffff; */
 }
 
 .recipe:hover .recipeImg{
@@ -110,9 +110,10 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-items: center;
+    align-content: start;
 }
 
-.diets{
+.dietCointainer p{
     border-radius: 10px;
     color: rgb(229, 35, 40);
     font-family: Centra No2 Light, sans-serif;
@@ -120,6 +121,7 @@ src: url("//db.onlinewebfonts.com/t/23ae4288a9ec35109fa15c3d90bcc359.eot"); src:
     height: 15px;
     width: 120px;
     background-color: #ffffff;
+    margin: 5px;
 }
 
 .items-container{

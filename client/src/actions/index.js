@@ -74,7 +74,7 @@ export function postRecipe(data) {
         const response = await axios.post(`${LOCAL_HOST}/recipes`, data);
         dispatch({ type: CREATE_RECIPE, payload: response.data });
       } catch (error) {
-        console.log(error);
+        dispatch({ type: CREATE_RECIPE, payload: error });
       }
     };
   }

@@ -1,4 +1,4 @@
-import {GET_RECIPES, GET_DIETS, FILTER_BY_DIET, FILTER_BY_SOURCE, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_NAME, GET_RECIPE_ID, CREATE_RECIPE} from '../actions/actionTypes.js'
+import {CREATE_RECIPE, GET_RECIPES, GET_DIETS, FILTER_BY_DIET, FILTER_BY_SOURCE, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_NAME, GET_RECIPE_ID} from '../actions/actionTypes.js'
 
 
 const initialState = {
@@ -6,6 +6,7 @@ const initialState = {
     recipesOriginal: [],
     recipeDetails : {},
     diets:[],
+    error:{}
 }
 
 function rootReducer( state = initialState, action ){
@@ -17,6 +18,11 @@ function rootReducer( state = initialState, action ){
                 recipes: action.payload
             }
         }
+        case CREATE_RECIPE:
+            return{
+                ...state,
+                error: action.payload.response.status
+            }
         case GET_DIETS:
           return {
             ...state,

@@ -18,7 +18,7 @@ export default function Card ({name, image, diets, healthScore, readyInMinutes, 
                     <img className="recipeImg" src={image} alt={name}/>
                 </div>
                 <div className="dietCointainer">
-                    {diets?.map(e => <h5 className="diets" key={e}>{e}</h5>)}            
+                    {diets?.map(e => <p key={e}>{e}</p>)}            
                 </div>
             </div>
             <div className="items-container">

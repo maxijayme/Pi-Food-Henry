@@ -111,7 +111,7 @@ router.post('/', async(req,res,next) =>{
     if (!summary) return res.status(400).send({error:'You must enter the summary for the recipe'});
     else{
         try{
-            const recipe = await Recipe.create(
+            const recipe = await Recipe.creat(
                 {name,
                 summary,
                 score,
