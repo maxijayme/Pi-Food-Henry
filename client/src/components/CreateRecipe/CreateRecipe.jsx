@@ -4,7 +4,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { getDiets, postRecipe } from '../../actions/index'
 import NavBar from '../NavBar/NavBar.jsx'
-import './createRecipe.css'
+import './CreateRecipe.css'
 
 export default function  CreateRecipe(){
 
