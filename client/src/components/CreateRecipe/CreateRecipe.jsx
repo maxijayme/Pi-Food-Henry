@@ -51,8 +51,7 @@ export default function  CreateRecipe(){
             servings:"0",
             weightWatcherSmartPoints:"0"
         })
-        
-        // history.push('/home')
+        history.push('/home')
     }
 
     const handleSelect = (e) => {

@@ -2,8 +2,8 @@ import axios from 'axios';
 import {GET_RECIPES, GET_DIETS, FILTER_BY_DIET, FILTER_BY_SOURCE, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_NAME, GET_RECIPE_ID, CREATE_RECIPE} from './actionTypes.js'
 
 
-const LOCAL_HOST = "https://food-750i.onrender.com" || "http://localhost:3001";
-
+//const LOCAL_HOST = "http://localhost:3001";
+const LOCAL_HOST = "https://food-750i.onrender.com"
 
 export function getRecipes(){
     return async function(dispatch){
