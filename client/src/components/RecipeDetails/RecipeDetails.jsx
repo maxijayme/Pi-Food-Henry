@@ -1,29 +1,39 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRecipeByID } from '../../actions/index';
-import { Link } from 'react-router-dom'
+import { getRecipeByID, clearDetail } from '../../actions/index';
+import { useHistory } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar.jsx'
 import './recipeDetails.css'
 
 export default function RecipeDetails(props) {
     const dispatch = useDispatch();
     const id = props.match.params.id;
+    const history = useHistory();
     
+    // useEffect(()=>{
+    //     dispatch(clearDetail())
+    // })
     
     useEffect(() => {
+        
         dispatch(getRecipeByID(id))
     }, [dispatch, id]);
     
-    
-    const recipeDetails = useSelector(state => state.recipeDetails);
+    const handleClick = (e) => {
+        e.preventDefault();
+        dispatch(clearDetail())
+        history.goBack();
+     }    
+
+    let recipeDetails = useSelector(state => state.recipeDetails);
     
     return ( 
         <div className="details-container-d" key={id}>            
             <NavBar/> 
             <div className='details-d'>  
                 <div className='card-cont-d'> 
-                <Link to="/home"><button className="backButton-d">Go back to recipes</button></Link>
+                <button className="backButton-d" onClick={e => handleClick(e)}>Go back to recipes</button>
                     <div className='card-d'> 
                         <div className='head-card-d'>
                             <div className="recipeHealthScore-d">
@@ -39,7 +49,7 @@ export default function RecipeDetails(props) {
                                 <img className="recipeImg-d" 
                                 src={recipeDetails.image ? 
                                 recipeDetails.image : 
-                                'https://images.unsplash.com/photo-1635321593217-40050ad13c74?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1748&q=80'} alt="Pic not found"/>
+                                ''} alt="Pic not found"/>
                             </div>
                         </div>
                         <div className='items-details-container'>

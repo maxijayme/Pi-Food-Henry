@@ -1,8 +1,8 @@
 import axios from 'axios';
-import {GET_RECIPES, GET_DIETS, FILTER_BY_DIET, FILTER_BY_SOURCE, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_NAME, GET_RECIPE_ID, CREATE_RECIPE} from './actionTypes.js'
+import {GET_RECIPES, GET_DIETS, FILTER_RECIPES, ORDER_BY_NAME, ORDER_BY_SCORE, GET_RECIPE_ID, CREATE_RECIPE, CLEAR_DETAIL} from './actionTypes.js'
 
 
-//const LOCAL_HOST = "http://localhost:3001";
+// const LOCAL_HOST = "http://localhost:3001";
 const LOCAL_HOST = "https://food-750i.onrender.com"
 
 export function getRecipes(){
@@ -14,19 +14,6 @@ export function getRecipes(){
         })
     }
 }
-
-//obtener las recipes por nombre
-export const getRecipesByName = (name) => dispatch =>{
-    return fetch(`${LOCAL_HOST}/recipes?name=${name}`)
-        .then(response => response.json())
-        .then(recipe => dispatch({
-            type: GET_RECIPE_NAME,
-            payload: recipe
-        }))
-        .catch((error) => {
-            console.log(error)
-        })
-};
 
 
 //obtener recipe por ID
@@ -81,23 +68,15 @@ export function postRecipe(data) {
 
 
 
-// //filtro por tipo de dieta
+// //filtro las dieta   s
 
-export function filterByDietType(payload){
+export function filteredRecipes(payload){
     return{
-        type: FILTER_BY_DIET,
+        type: FILTER_RECIPES,
         payload
     }
 }
 
-// //filtro por tipo origen
-
-export function filterBySource(payload){
-    return{
-        type: FILTER_BY_SOURCE,
-        payload
-    }
-}
 
 //orden alfabetico
 
@@ -114,5 +93,13 @@ export function orderByScore(payload){
     return{
         type: ORDER_BY_SCORE,
         payload
+    }
+}
+
+//borro detalles
+export function clearDetail(){
+    return{
+        type: CLEAR_DETAIL,
+        payload:{}
     }
 }

@@ -77,7 +77,7 @@ router.get('/', async (req,res,next)=>{
          if(name){
              const recipeByName = allRecipes.filter(e => e.name.toLowerCase().includes(name.toString().toLowerCase()));
              recipeByName.length ?
-             res.status(200).send(recipeByName)
+             res.status(200).json(recipeByName)
              : res.status(404).send("We don't have that recipe");
          }else{
              res.status(200).send(allRecipes);

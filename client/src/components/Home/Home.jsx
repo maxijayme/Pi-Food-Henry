@@ -12,7 +12,7 @@ import './home.css'
 export default function Home(){
     const dispatch = useDispatch();
     const allRecipes = useSelector((state)=>state.recipes);
-    
+    console.log('home:',allRecipes)
     
     const [ currentPage, setCurrentPage ] = useState(1);
     const [recipesPerPage, ] = useState(9);
@@ -33,13 +33,15 @@ export default function Home(){
         if (!allRecipes.length) {
           dispatch(getRecipes());
         }
-    }, [dispatch, allRecipes]);
+    },[]);
     
     useEffect(()=>{
-        dispatch(getDiets()) 
-    },[dispatch])
+        if (!allRecipes.length) {
+         dispatch(getDiets()) 
+        }
+    },[]);
         
-  
+    console.log(currentRecipes)
     return(
         <div className="home">
             <SearchBar setCurrentPage={setCurrentPage} setOrder={setOrder} />
